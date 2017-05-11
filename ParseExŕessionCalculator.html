@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Calculator.js</title>
+
+	</head>
+
+	<body>
+
+		<h2>Calculator</h2>
+
+		<form>
+
+			<input type="text" id="calculadora">
+
+		</form>
+
+		<button>1</button><button>2</button><button>3</button><button>+</button><button>-</button><br>
+		<button>4</button><button>5</button><button>6</button><button>x</button><button>/</button><br>
+		<button>7</button><button>8</button><button>9</button><button>0</button><button>=</button><br>
+					
+		</div>
+
+		<script src="jquery.js"></script>
+		<script type="text/javascript">
+
+		$(document).ready(function(){
+
+						$("button").click(function(){
+
+								var x = this.innerHTML.toString();												
+								var y = $("#calculadora").val();
+								var z = y + x;
+								var w = y.split("");										
+								var num1 = "";
+								var num2 = "";
+								var valor1 = 0;
+								var valor2 = 0;
+								var auxInt = 0;
+								var numatual = 1;
+								var operadoratual = "";
+
+								if(x !== "="){
+					
+									$("#calculadora").val(z);
+
+								}else{
+
+										auxInt = w.length;
+										w[auxInt] = "=";	
+
+										for (var i = 0 ; w.length > i; i++) {
+
+
+											switch (w[i]){
+
+									 //--------------------------------------------------------			
+												case "0":
+
+													if(numatual === 1){
+
+													num1 = num1 + "0";																
+
+												    }else{
+
+												    num2 = num2 + "0";
+
+												    }
+
+
+												break;
+
+									 //--------------------------------------------------------			
+												case "1":
+
+													if(numatual === 1){
+
+													num1 = num1 + "1";																
+
+												    }else{
+
+												    num2 = num2 + "1";
+
+												    }
+
+
+												break;
+											
+									//--------------------------------------------------------			
+												case "2":
+
+												if(numatual === 1){
+
+													num1 = num1 + "2";																
+
+												    }else{
+
+												    num2 = num2 + "2";
+
+												    }
+
+
+												break;
+
+								     //--------------------------------------------------------			
+												case "3":
+
+												if(numatual === 1){
+
+													num1 = num1 + "3";																
+
+												    }else{
+
+												    num2 = num2 + "3";
+
+												    }
+
+												break;
+
+									//--------------------------------------------------------			
+												case "4":
+
+												if(numatual === 1){
+
+													num1 = num1 + "4";																
+
+												    }else{
+
+												    num2 = num2 + "4";
+
+												    }
+
+												break;
+
+									  //--------------------------------------------------------			
+												case "5":
+
+												if(numatual === 1){
+
+													num1 = num1 + "5";																
+
+												    }else{
+
+												    num2 = num2 + "5";
+
+												    }
+
+												break;
+									 //--------------------------------------------------------			
+												case "6":
+
+												if(numatual === 1){
+
+													num1 = num1 + "6";																
+
+												    }else{
+
+												    num2 = num2 + "6";
+
+												    }
+
+												break;
+									 //--------------------------------------------------------			
+												case "7":
+
+												if(numatual === 1){
+
+													num1 = num1 + "7";																
+
+												    }else{
+
+												    num2 = num2 + "7";
+
+												    }
+
+												break;
+
+									 //--------------------------------------------------------
+												case "8":
+
+												if(numatual === 1){
+
+													num1 = num1 + "8";																
+
+												    }else{
+
+												    num2 = num2 + "8";
+
+												    }
+
+												break;
+
+									 //--------------------------------------------------------
+
+												case "9":
+
+												if(numatual === 1){
+
+													num1 = num1 + "9";																
+
+												    }else{
+
+												    num2 = num2 + "9";
+
+												    }
+
+												break;
+
+												
+										 //--------------------------------------------------------
+
+												case "+":
+												
+													if(numatual === 1){
+
+														operadoratual = "+";
+														numatual = 2;
+
+													}else{
+
+														valor1 = parseInt(num1);
+														valor2 = parseInt(num2);
+											            switch (operadoratual){
+
+											            	case '+':
+											            		auxInt	= valor1 + valor2;
+																num1 = auxInt.toString();																							
+											            	break;
+											            	case '-':
+											            		auxInt	= valor1 - valor2;
+																num1 = auxInt.toString();																							
+											            	break;
+											            	case 'x':
+											            		auxInt	= valor1 * valor2;
+																num1 = auxInt.toString();																						
+											            	break;
+											            	case '/':
+											            		auxInt	= valor1 / valor2;
+																num1 = auxInt.toString();																							
+											            	break;
+																	
+
+														}	
+
+														num2 = "";
+														operadoratual = "+";										    		
+
+													}
+													
+												break;
+
+												//--------------------------------------------------------
+
+												case "-":
+												
+													if(numatual === 1){
+
+														operadoratual = "-";
+														numatual = 2;
+
+													}else{
+																															
+
+														valor1 = parseInt(num1);
+														valor2 = parseInt(num2);
+											            switch (operadoratual){
+
+											            	case '+':
+											            		auxInt	= valor1 + valor2;
+																num1 = auxInt.toString();																							
+											            	break;
+											            	case '-':
+											            		auxInt	= valor1 - valor2;
+																num1 = auxInt.toString();																							
+											            	break;
+											            	case 'x':
+											            		auxInt	= valor1 * valor2;
+																num1 = auxInt.toString();																						
+											            	break;
+											            	case '/':
+											            		auxInt	= valor1 / valor2;
+																num1 = auxInt.toString();																							
+											            	break;
+																	
+
+														}	
+
+														num2 = "";
+														operadoratual = "-";								    		
+
+													}
+													
+												break;
+
+												//--------------------------------------------------------
+
+												case "x":
+												
+													if(numatual === 1){
+
+														operadoratual = "x";
+														numatual = 2;
+
+													}else{
+												
+														valor1 = parseInt(num1);
+														valor2 = parseInt(num2);
+											            switch (operadoratual){
+
+											            	case '+':
+											            		auxInt	= valor1 + valor2;
+																num1 = auxInt.toString();																							
+											            	break;
+											            	case '-':
+											            		auxInt	= valor1 - valor2;
+																num1 = auxInt.toString();																							
+											            	break;
+											            	case 'x':
+											            		auxInt	= valor1 * valor2;
+																num1 = auxInt.toString();																						
+											            	break;
+											            	case '/':
+											            		auxInt	= valor1 / valor2;
+																num1 = auxInt.toString();																							
+											            	break;
+																	
+
+														}	
+
+														num2 = "";
+															operadoratual = "x";													
+													}
+													
+												break;
+
+												//--------------------------------------------------------
+
+												case "/":
+												
+
+													if(numatual === 1){
+
+														operadoratual = "/";
+														numatual = 2;
+
+													}else{
+
+														valor1 = parseInt(num1);
+														valor2 = parseInt(num2);
+
+											            switch (operadoratual){
+
+											            	case '+':
+											            		auxInt	= valor1 + valor2;
+																num1 = auxInt.toString();																							
+											            	break;
+											            	case '-':
+											            		auxInt	= valor1 - valor2;
+																num1 = auxInt.toString();																							
+											            	break;
+											            	case 'x':
+											            		auxInt	= valor1 * valor2;
+																num1 = auxInt.toString();																						
+											            	break;
+											            	case '/':
+											            		auxInt	= valor1 / valor2;
+																num1 = auxInt.toString();																							
+											            	break;
+																	
+
+														}	
+
+														num2 = "";
+														operadoratual = "/";			
+													}
+													
+												break;
+
+											//--------------------------------------------------------
+											    case "=":
+
+											    	valor1 = parseInt(num1);
+													valor2 = parseInt(num2);
+
+										      			switch(operadoratual){
+
+										      				case "+":
+										      					     auxInt	= valor1 + valor2;
+																	 num1 = auxInt.toString();																					
+										      				break;
+
+										      				case "-":
+										      					     auxInt	= valor1 - valor2;
+																	 num1 = auxInt.toString();																					 
+										      				break;
+
+										      				case "x":
+										      					     auxInt	= valor1 * valor2;
+																	 num1 = auxInt.toString();
+										      				break;
+
+										      				case '/':
+												            		auxInt	= valor1 / valor2;
+																	num1 = auxInt.toString();																							
+														   	break;
+
+
+										      			}
+
+										      			$("#calculadora").val(num1);
+											    break;
+
+													
+											 //--------------------------------------------------------
+
+												case " ":
+
+												break;
+
+											 //--------------------------------------------------------
+												default:
+
+														alert("Valor inválido");
+
+													break;
+
+											}//fimswitch
+
+									     };//fimfor
+
+									}//fimelse
+
+								});//buttonclick
+
+				});//document.ready
+
+		</script>
+	</body>
+</html>
